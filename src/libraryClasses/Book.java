@@ -7,26 +7,26 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+//import java.nio.file.Path;
+//import java.nio.file.Paths;
 
 public class Book {
 	
-	Path filePath = Paths.get("Book.txt");
-
-	File myBookFile = filePath.toFile();
-	
-	writeToFileAppend(myBookFile);
-	writeToFile(myBookFile);
-	readFile(myBookFile);
-}
+//	Path filePath = Paths.get("Book.txt");
+//
+//	File myBookFile = filePath.toFile();
+//	
+//	//writeToFileAppend(myBookFile);
+//	//writeToFile(myBookFile);
+//	readFile(myBookFile);
+//}
 
 /**
  * @param myConfigFile
  */
 public static void readFile(File myBookFile) {
 	try {
-		FileReader reader = new FileReader(myBookfile);
+		FileReader reader = new FileReader(myBookFile);
 		BufferedReader bReader = new BufferedReader(reader);
 		String newLine = bReader.readLine();
 		
@@ -54,7 +54,9 @@ public static void writeToFile(File myBookFile) {
 	try {
 		wrt = new PrintWriter(myBookFile);
 
-		wrt.println("Hello world");
+		wrt.println("Black Beauty, Swell , Anna ");
+		wrt.println("The girl on the train, Hawkins, Paula");
+		wrt.println("The Alchemist, Coelho, Paulo");
 		
 
 	} catch (FileNotFoundException e) {
@@ -71,8 +73,8 @@ public static void writeToFileAppend(File myBookFile) {
 	try {
 		wrt = new FileWriter(myBookFile,true);
 
-		wrt.append("\nHello\n"); 
-		wrt.append("world");
+	//	wrt.append("\nHello\n"); 
+		//wrt.append("world");
 		wrt.close();
 		
 
@@ -92,4 +94,4 @@ public static void writeToFileAppend(File myBookFile) {
 }
 
 
-}
+
