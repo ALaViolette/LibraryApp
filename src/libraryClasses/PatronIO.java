@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 //import java.nio.file.Path;
 //import java.nio.file.Paths;
 
-public class Patron {
+public class PatronIO {
 	
 //	Path filePath = Paths.get("Patron.txt");
 //
