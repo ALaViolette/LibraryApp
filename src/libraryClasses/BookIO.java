@@ -7,10 +7,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Path;
 //import java.nio.file.Path;
 //import java.nio.file.Paths;
+import java.nio.file.Paths;
 
-public class Book {
+public class BookIO {
 	
 //	Path filePath = Paths.get("Book.txt");
 //
@@ -24,17 +26,23 @@ public class Book {
 /**
  * @param myConfigFile
  */
-public static void readFile(File myBookFile) {
+public static String readFile() {
+	Path filePath = Paths.get("Book.txt");
+	//
+  	File myBookFile = filePath.toFile();
+	String newLine="";
+	String fileText="";
 	try {
 		FileReader reader = new FileReader(myBookFile);
 		BufferedReader bReader = new BufferedReader(reader);
-		String newLine = bReader.readLine();
+		 newLine = bReader.readLine();
 		
 		while(newLine != null){
 			
 			System.out.println(newLine);
 			newLine = bReader.readLine();
-			
+			fileText+=newLine; 
+			//return newLine; 
 		}
 		
 	} catch (FileNotFoundException e ) {
@@ -42,6 +50,11 @@ public static void readFile(File myBookFile) {
 		e.printStackTrace();
 		
 	}catch (IOException e){
+		
+	}
+	finally
+	{
+		return fileText; 
 		
 	}
 }
@@ -54,9 +67,9 @@ public static void writeToFile(File myBookFile) {
 	try {
 		wrt = new PrintWriter(myBookFile);
 
-		wrt.println("Black Beauty, Swell , Anna ");
-		wrt.println("The girl on the train, Hawkins, Paula");
-		wrt.println("The Alchemist, Coelho, Paulo");
+		wrt.println("Black Beauty,Swell,Anna");
+		wrt.println("The girl on the train,Hawkins,Paula");
+		wrt.println("The Alchemist,Coelho,Paulo");
 		
 
 	} catch (FileNotFoundException e) {
