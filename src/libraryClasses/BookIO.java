@@ -38,10 +38,10 @@ public static String readFile() {
 		 newLine = bReader.readLine();
 		
 		while(newLine != null){
-			
-			System.out.println(newLine);
+			fileText+=newLine+"\n"; 
+			//System.out.println(newLine);
 			newLine = bReader.readLine();
-			fileText+=newLine; 
+			
 			//return newLine; 
 		}
 		
