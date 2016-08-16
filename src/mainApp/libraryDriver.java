@@ -14,7 +14,14 @@ import libraryClasses.*;
 public class libraryDriver {
 
 	public static void main(String[] args) {
-			
+		
+		Path filePath = Paths.get("Patron.txt");
+		File myPatronFile = filePath.toFile();
+		PatronIO p1 = new PatronIO();
+		p1.writeToFile(myPatronFile);
+		p1.readFile(myPatronFile);
+		
+		
 		System.out.println(
 				"Welcome to the Library Application!\n1. See the list of books in our library.\n2. Search for a book by author.\n3. Search for a book by title.\n4. Check out a book.\n5. Return a book. \nEnter menu number: ");
 		Scanner scan1 = new Scanner(System.in);
