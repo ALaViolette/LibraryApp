@@ -27,15 +27,27 @@ public class libraryDriver {
 		Scanner scan1 = new Scanner(System.in);
 		int userInput = scan1.nextInt();
 		BookArray list = new BookArray();
+		String userChoice = "";
 		ArrayList<BookClass> myList = list.getListofBooks();// Factory DP
-		if (userInput == 1) {
+		boolean bookFound = false;
+		
+		switch (userInput) {
+		case 1:
 
 			for (int i = 0; i < myList.size(); i++) {
 				System.out.println(myList.get(i).getTitle());
 			}
-		}
+			//CASE 15
+//			System.out.println("Do you want to check out a book?");
+//			userChoice = scan1.nextLine();
+//			if (userChoice.equalsIgnoreCase("yes")) {
+//				userInput = 4;
+//			} else if (userChoice.equalsIgnoreCase("no")) {
+//				userInput = 0;
+//			}
+//			break;
 
-		else if (userInput == 2) {
+		case 2: 
 			for (int i = 0; i < myList.size(); i++) {
 				System.out.println(myList.get(i).getLastName() + ", " + myList.get(i).getFirstName());
 			}
@@ -48,24 +60,30 @@ public class libraryDriver {
 
 					System.out.println(myList.get(i).getTitle());
 				}
-
+				//case 15:
 			}
 
-		} else if (userInput == 3) {
-			for (int i = 0; i < myList.size(); i++) {
-				System.out.println(myList.get(i).getTitle());
-			}
+	
+		case 3: 
+			
 			System.out.println("Enter the book you would like to see: ");
 			scan1.nextLine();
-			String userInput2 = scan1.nextLine();
+			userChoice = scan1.nextLine();
 
 			for (int i = 0; i < myList.size(); i++) {
-				if (userInput2.equalsIgnoreCase(myList.get(i).getLastName())) {
-
-					System.out.println(myList.get(i).getTitle());
-				}
+				if (userChoice.equalsIgnoreCase(myList.get(i).getTitle())) {
+					bookFound = true;
+					System.out.println(myList.get(i).getTitle() +" is written by " + myList.get(i).getFirstName() + " " + myList.get(i).getLastName());
+//				
+					}
 
 			}
+			if(bookFound==false)
+				System.out.println("We do not have that book");
 		}
+		//else if (userInput == 4) {
+		//	System.out.println("4! great.");
+		}
+	
 	}
-}
+
