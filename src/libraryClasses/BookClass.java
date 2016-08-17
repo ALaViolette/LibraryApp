@@ -29,7 +29,7 @@ public class BookClass {
 		this.bookNumber = bookNumber;
 	}
 
-	public BookClass(String firstName, String lastName, String title, Boolean checkedIn,
+	public BookClass(String firstName, String lastName, String title, String checkedIn,
 			LocalDate dueDate) {
 		setAFirstName(firstName);
 		setALastName(lastName);
