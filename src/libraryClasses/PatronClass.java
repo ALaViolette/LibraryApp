@@ -1,9 +1,8 @@
 package libraryClasses;
 
 public class PatronClass {
-	
+	//constructor
 	public PatronClass(String phoneNo, String lastName, String firstName) {
-		super();
 		this.phoneNo = phoneNo;
 		this.lastName = lastName;
 		this.firstName = firstName;
