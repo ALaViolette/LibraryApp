@@ -12,7 +12,6 @@ public class BookArray {
 
 	
 	private ArrayList<BookClass> bookList = new ArrayList<>();
-	
 	public ArrayList<BookClass> getListofBooks()
 	
 	{ 
@@ -21,16 +20,19 @@ public class BookArray {
 		//System.out.println(filetext);
 		String[] lines = filetext.split("\n"); // split by lines 
 		String [] info=null;
-		
+		int i = 1;
 		for (String str : lines)
 		{
 			info = str.split(",");// split by , 
 			
-			BookClass n = new BookClass(info[2],info[1],info[0]);
-			//System.out.println(info[2]);
-			bookList.add(n);
+			BookClass n = new BookClass(info[0],info[1],info[2],info[3], i);
 			
+			bookList.add(n);
+		
+			i++;
 		}
+		
+	
 		
 		return bookList;
 	}

@@ -14,9 +14,9 @@ import java.nio.file.Paths;
 
 public class BookIO {
 	
-//	Path filePath = Paths.get("Book.txt");
-//
-//	File myBookFile = filePath.toFile();
+	Path filePath = Paths.get("Book.txt");
+
+	File myBookFile = filePath.toFile();
 //	
 //	//writeToFileAppend(myBookFile);
 //	//writeToFile(myBookFile);
@@ -28,7 +28,6 @@ public class BookIO {
  */
 public static String readFile() {
 	Path filePath = Paths.get("Book.txt");
-	//
   	File myBookFile = filePath.toFile();
 	String newLine="";
 	String fileText="";
@@ -59,17 +58,16 @@ public static String readFile() {
 	}
 }
 
-/*
- * @param myConfigFile
- */
+
 public static void writeToFile(File myBookFile) {
 	PrintWriter wrt = null;
 	try {
 		wrt = new PrintWriter(myBookFile);
 
-		wrt.println("Black Beauty,Swell,Anna");
-		wrt.println("The girl on the train,Hawkins,Paula");
-		wrt.println("The Alchemist,Coelho,Paulo");
+		wrt.println("Anna,Swell,Black Beauty,Checked In");
+		wrt.println("Paula,Hawkins,The girl on the train,Checked In");
+		wrt.println("Paulo,Coelho,The Alchemist,Checked In");
+		wrt.println("author1,lastname,abook,Checked Out");
 		
 
 	} catch (FileNotFoundException e) {
@@ -81,27 +79,26 @@ public static void writeToFile(File myBookFile) {
 	}
 }
 
-public static void writeToFileAppend(File myBookFile) {
-	FileWriter wrt = null;
-	try {
-		wrt = new FileWriter(myBookFile,true);
-
-	//	wrt.append("\nHello\n"); 
-		//wrt.append("world");
-		wrt.close();
-		
-
-	} catch (FileNotFoundException e) {
-
-		e.printStackTrace();
-	} 
-	catch(IOException e){
-		
-	}
-//	finally {
+//public static void writeToFileAppend(File myBookFile) {
+//	FileWriter wrt = null;
+//	try {
+//		wrt = new FileWriter(myBookFile,true);
+//
+//
 //		wrt.close();
+//		
+//
+//	} catch (FileNotFoundException e) {
+//
+//		e.printStackTrace();
+//	} 
+//	catch(IOException e){
+//		
 //	}
-}
+////	finally {
+////		wrt.close();
+////	}
+//}
 
 
 }
