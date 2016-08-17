@@ -37,6 +37,7 @@ public class libraryDriver {
 			for (int i = 0; i < myList.size(); i++) {
 				System.out.println(myList.get(i).getTitle());
 			}
+			break;
 			//CASE 15
 //			System.out.println("Do you want to check out a book?");
 //			userChoice = scan1.nextLine();
@@ -45,7 +46,6 @@ public class libraryDriver {
 //			} else if (userChoice.equalsIgnoreCase("no")) {
 //				userInput = 0;
 //			}
-//			break;
 
 		case 2: 
 			for (int i = 0; i < myList.size(); i++) {
@@ -62,24 +62,27 @@ public class libraryDriver {
 				}
 				//case 15:
 			}
-
+			break;
 	
 		case 3: 
-			
 			System.out.println("Enter the book you would like to see: ");
 			scan1.nextLine();
 			userChoice = scan1.nextLine();
 
 			for (int i = 0; i < myList.size(); i++) {
-				if (userChoice.equalsIgnoreCase(myList.get(i).getTitle())) {
+				if (myList.get(i).getTitle().toLowerCase().contains(userChoice.toLowerCase())) {
 					bookFound = true;
-					System.out.println(myList.get(i).getTitle() +" is written by " + myList.get(i).getFirstName() + " " + myList.get(i).getLastName());
+					System.out.println("Our library contains " + myList.get(i).getTitle() +" written by " + myList.get(i).getFirstName() + " " + myList.get(i).getLastName());
 //				
 					}
-
 			}
 			if(bookFound==false)
 				System.out.println("We do not have that book");
+//			else
+				System.out.println("Would you like to check it out?");
+		
+		case 4:
+			
 		}
 		//else if (userInput == 4) {
 		//	System.out.println("4! great.");
